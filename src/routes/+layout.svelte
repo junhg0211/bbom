@@ -8,12 +8,12 @@
 	<style>
 		@font-face {
 			font-family: 'JZukinie';
-			src: url('/JZukinie.otf') format('truetype');
+			src: url('./JZukinie.otf') format('truetype');
 		}
 
 		@font-face {
 			font-family: 'LaundryGothic';
-			src: url('/LaundryGothic.otf') format('truetype');
+			src: url('./LaundryGothic.otf') format('truetype');
 		}
 
 		body {
