@@ -83,6 +83,7 @@
 
 	function draw() {
 		fromDate = new Date(fromDate);
+		fromDate.setDate(fromDate.getDate() - fromDate.getDay() + 1); // 입력된 날짜를 해당 주의 월요일로 조정
 
 		// draw background
 		ctx.drawImage(BACKGROUND, 0, 0, WIDTH, HEIGHT);
