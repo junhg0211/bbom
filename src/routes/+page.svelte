@@ -199,9 +199,11 @@
 				const y = 1109 + index * (1482 - 1109); // 일정 개수에 따른 y 좌표 (임시로 i 사용, 실제로는 plan의 index를 사용해야 함)
 				ctx.drawImage(blockImage, x, y);
 
-				ctx.fillStyle = [ALL_COLOR, DAWN_COLOR, DOJIN_COLOR, REKURIM_COLOR, KYEONGYOONG_COLOR][
-					['하울링크', '이다음', '연도진', '리쿠림', '경융'].indexOf(plan.who)
-				];
+				ctx.fillStyle = ALL_COLOR;
+				if (plan.who === '이다음') ctx.fillStyle = DAWN_COLOR;
+				else if (plan.who === '연도진') ctx.fillStyle = DOJIN_COLOR;
+				else if (plan.who === '리쿠림') ctx.fillStyle = REKURIM_COLOR;
+				else if (plan.who === '경융') ctx.fillStyle = KYEONGYOONG_COLOR;
 				ctx.font = '32.5px LaundryGothic';
 				ctx.textAlign = 'center';
 				ctx.textBaseline = 'middle';
