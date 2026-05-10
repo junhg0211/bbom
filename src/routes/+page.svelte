@@ -20,6 +20,7 @@
 	let PAW_PURPLE;
 	let PAW_YELLOW;
 	let PAW_GREY;
+	let ANNOUNCEMENT;
 
 	const ALL_COLOR = '#A94E77';
 	const DAWN_COLOR = '#3B4DA1';
@@ -70,6 +71,8 @@
 	let mintPaw = $state(false);
 	let bluePaw = $state(false);
 	let purplePaw = $state(false);
+
+	let notice = $state('');
 
 	function downloadCanvasAsImage() {
 		const link = document.createElement('a');
@@ -226,6 +229,16 @@
 				ctx.fillText(plan.time, x + width / 2, y + 285.5);
 			}
 		}
+
+		// notice
+		if (notice) {
+			ctx.drawImage(ANNOUNCEMENT, 176, 3019);
+			ctx.fillStyle = '#3367B4';
+			ctx.font = '54.2px LaundryGothic';
+			ctx.textAlign = 'left';
+			ctx.textBaseline = 'middle';
+			ctx.fillText(notice, 327.4, 3102);
+		}
 	}
 
 	onMount(async () => {
@@ -245,6 +258,7 @@
 		PAW_PURPLE = loadImage('/paw_purple.png');
 		PAW_YELLOW = loadImage('/paw_yellow.png');
 		PAW_GREY = loadImage('/paw_grey.png');
+		ANNOUNCEMENT = loadImage('/announcement.png');
 
 		ctx = canvas.getContext('2d')!;
 		canvas.width = WIDTH;
@@ -263,7 +277,7 @@
 		</div>
 		<div class="control-row">
 			<div class="control-label">
-				<label for="fromDate">오프</label>
+				<label for="fromDate">발바닥</label>
 			</div>
 			<div class="control-input">
 				<label><input type="checkbox" bind:checked={yellowPaw} onchange={draw} /> 노란</label>
@@ -357,6 +371,14 @@
 				</div>
 			</div>
 		{/each}
+		<div class="control-row">
+			<div class="plan-label">
+				<label for="fromDate">전체 공지</label>
+			</div>
+			<div class="control-input">
+				<input type="text" placeholder="공지사항을 입력하세요" bind:value={notice} oninput={draw} />
+			</div>
+		</div>
 		<button onclick={draw}>새로고침</button>
 		<button onclick={downloadCanvasAsImage}>다운로드</button>
 	</div>
@@ -392,9 +414,18 @@
 		font-weight: bold;
 	}
 
+	.control-input {
+		flex: 1;
+	}
+
 	.control-input input {
 		padding: 5px;
 		font-size: 16px;
+	}
+
+	.control-input input[type='text'],
+	.control-input input[type='date'] {
+		width: 100%;
 	}
 
 	button {
