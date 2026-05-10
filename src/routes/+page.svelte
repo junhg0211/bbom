@@ -242,23 +242,23 @@
 	}
 
 	onMount(async () => {
-		BACKGROUND = loadImage('/background.png');
-		BLOCK_ALL_CHZZK = loadImage('/block_all_chzzk.png');
-		BLOCK_ALL_YOUTUBE = loadImage('/block_all_youtube.png');
-		BLOCK_DAWN_CHZZK = loadImage('/block_dawn_chzzk.png');
-		BLOCK_DAWN_YOUTUBE = loadImage('/block_dawn_youtube.png');
-		BLOCK_DOJIN_CHZZK = loadImage('/block_dojin_chzzk.png');
-		BLOCK_DOJIN_YOUTUBE = loadImage('/block_dojin_youtube.png');
-		BLOCK_KYEONGYOONG_CHZZK = loadImage('/block_kyeongyoong_chzzk.png');
-		BLOCK_KYEONGYOONG_YOUTUBE = loadImage('/block_kyeongyoong_youtube.png');
-		BLOCK_REKURIM_CHZZK = loadImage('/block_rekurim_chzzk.png');
-		BLOCK_REKURIM_YOUTUBE = loadImage('/block_rekurim_youtube.png');
-		PAW_BLUE = loadImage('/paw_blue.png');
-		PAW_MINT = loadImage('/paw_mint.png');
-		PAW_PURPLE = loadImage('/paw_purple.png');
-		PAW_YELLOW = loadImage('/paw_yellow.png');
-		PAW_GREY = loadImage('/paw_grey.png');
-		ANNOUNCEMENT = loadImage('/announcement.png');
+		BACKGROUND = loadImage('./background.png');
+		BLOCK_ALL_CHZZK = loadImage('./block_all_chzzk.png');
+		BLOCK_ALL_YOUTUBE = loadImage('./block_all_youtube.png');
+		BLOCK_DAWN_CHZZK = loadImage('./block_dawn_chzzk.png');
+		BLOCK_DAWN_YOUTUBE = loadImage('./block_dawn_youtube.png');
+		BLOCK_DOJIN_CHZZK = loadImage('./block_dojin_chzzk.png');
+		BLOCK_DOJIN_YOUTUBE = loadImage('./block_dojin_youtube.png');
+		BLOCK_KYEONGYOONG_CHZZK = loadImage('./block_kyeongyoong_chzzk.png');
+		BLOCK_KYEONGYOONG_YOUTUBE = loadImage('./block_kyeongyoong_youtube.png');
+		BLOCK_REKURIM_CHZZK = loadImage('./block_rekurim_chzzk.png');
+		BLOCK_REKURIM_YOUTUBE = loadImage('./block_rekurim_youtube.png');
+		PAW_BLUE = loadImage('./paw_blue.png');
+		PAW_MINT = loadImage('./paw_mint.png');
+		PAW_PURPLE = loadImage('./paw_purple.png');
+		PAW_YELLOW = loadImage('./paw_yellow.png');
+		PAW_GREY = loadImage('./paw_grey.png');
+		ANNOUNCEMENT = loadImage('./announcement.png');
 
 		ctx = canvas.getContext('2d')!;
 		canvas.width = WIDTH;
