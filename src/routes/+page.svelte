@@ -179,9 +179,7 @@
 				if (!plan.who || !plan.platform) continue;
 
 				let blockImage;
-				if (plan.who === '하울링크') {
-					blockImage = plan.platform === '유튜브' ? BLOCK_ALL_YOUTUBE : BLOCK_ALL_CHZZK;
-				} else if (plan.who === '이다음') {
+				if (plan.who === '이다음') {
 					blockImage = plan.platform === '유튜브' ? BLOCK_DAWN_YOUTUBE : BLOCK_DAWN_CHZZK;
 				} else if (plan.who === '연도진') {
 					blockImage = plan.platform === '유튜브' ? BLOCK_DOJIN_YOUTUBE : BLOCK_DOJIN_CHZZK;
@@ -190,6 +188,8 @@
 				} else if (plan.who === '경융') {
 					blockImage =
 						plan.platform === '유튜브' ? BLOCK_KYEONGYOONG_YOUTUBE : BLOCK_KYEONGYOONG_CHZZK;
+				} else {
+					blockImage = plan.platform === '유튜브' ? BLOCK_ALL_YOUTUBE : BLOCK_ALL_CHZZK;
 				}
 
 				const width = blockImage.width;
@@ -297,13 +297,7 @@
 				<div class="control-input">
 					{#each plans as plan, index}
 						<div class="plan-inputs">
-							<select bind:value={plan.who} onchange={draw}>
-								<option>하울링크</option>
-								<option>이다음</option>
-								<option>연도진</option>
-								<option>리쿠림</option>
-								<option>경융</option>
-							</select>
+							<input type="text" placeholder="하울링크" bind:value={plan.who} oninput={draw} />
 							<select bind:value={plan.platform} onchange={draw}>
 								<option>치지직</option>
 								<option>유튜브</option>
